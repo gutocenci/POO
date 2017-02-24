@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 public class GUIAluno extends javax.swing.JFrame {
 
-    DecimalFormat Formato = new DecimalFormat("#0.00");
+    
 
     /**
      * Creates new form GUIAluno
@@ -229,14 +229,15 @@ public class GUIAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnSairActionPerformed
 
     private void BtnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCalcularActionPerformed
+        DecimalFormat Formato = new DecimalFormat("#0.00");
         double Nota1, Nota2, Media;
 
         if (!"".equals(Text1Nota.getText()) && (!"".equals(Text2Nota.getText()))) {
 
-            Nota1 = Double.parseDouble(Text1Nota.getText());
-            Nota2 = Double.parseDouble(Text2Nota.getText());
+            Nota1 = Double.parseDouble(Text1Nota.getText().replace(',','.'));
+            Nota2 = Double.parseDouble(Text2Nota.getText().replace(',','.'));
             Media = (Nota1 + Nota2) / 2;
-            TextMedia.setText(String.valueOf(Formato.format(Media)));
+            TextMedia.setText(Formato.format(Media));
 
             if (Media >= 6) {
                 TextSituacao.setText("Aprovado");
@@ -246,6 +247,7 @@ public class GUIAluno extends javax.swing.JFrame {
 
             BtnCalcular.setEnabled(false);
             BtnLimpar.setEnabled(true);
+            
         } else {
             JOptionPane.showMessageDialog(null, "Digite as notas");
         }
