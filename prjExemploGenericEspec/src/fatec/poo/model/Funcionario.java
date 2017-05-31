@@ -5,9 +5,27 @@ public abstract class Funcionario {
     private int Registro;
     private String Nome;
     private String DtAdmissao;
+    private String Cargo;
 
-    public Funcionario(int r, String n, String dta) {
+    public int getRegistro() {
+        return Registro;
+    }
+
+    public String getNome() {
+        return Nome;
+    }
+
+    public String getDtAdmissao() {
+        return DtAdmissao;
+    }
+
+    public String getCargo() {
+        return Cargo;
+    }
+
+    public Funcionario(int r, String n, String dta, String C) {
         Registro = r;
+        Cargo = C;
         Nome = n;
         DtAdmissao = dta;
     }

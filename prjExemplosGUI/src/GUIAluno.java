@@ -1,3 +1,9 @@
+
+import java.text.DecimalFormat;
+
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,19 +12,14 @@
 
 /**
  *
- * @author 0030481521018
+ * @author Felipe
  */
-import java.text.DecimalFormat;
-import javax.swing.JOptionPane;
-
-public class GUIAluno extends javax.swing.JFrame {
-
-    
+public class GuiAluno extends javax.swing.JFrame {
 
     /**
-     * Creates new form GUIAluno
+     * Creates new form GuiAluno
      */
-    public GUIAluno() {
+    public GuiAluno() {
         initComponents();
     }
 
@@ -32,93 +33,59 @@ public class GUIAluno extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        TextRA = new javax.swing.JTextField();
+        txtRa = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        TextNome = new javax.swing.JTextField();
-        Text1Nota = new javax.swing.JTextField();
+        txtNota1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        Text2Nota = new javax.swing.JTextField();
+        txtNota2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        TextMedia = new javax.swing.JTextField();
+        lblMedia = new javax.swing.JLabel();
+        lblSituacao = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        TextSituacao = new javax.swing.JTextField();
-        BtnCalcular = new javax.swing.JButton();
-        BtnLimpar = new javax.swing.JButton();
-        BtnSair = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+        btnCalcular = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("GUI Aluno");
+        setTitle("Gui Aluno");
 
-        jLabel1.setText("RA");
+        jLabel1.setText("RA:");
 
-        TextRA.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setText("Nome:");
+
+        jLabel3.setText("1a. Nota:");
+
+        jLabel4.setText("2a. Nota:");
+
+        jLabel5.setText("Média:");
+
+        lblMedia.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        lblSituacao.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel6.setText("Situação:");
+
+        btnLimpar.setText("Limpar");
+        btnLimpar.setEnabled(false);
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextRAActionPerformed(evt);
+                btnLimparActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Nome");
-
-        jLabel3.setText("1º Nota");
-
-        TextNome.addActionListener(new java.awt.event.ActionListener() {
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextNomeActionPerformed(evt);
+                btnSairActionPerformed(evt);
             }
         });
 
-        Text1Nota.addActionListener(new java.awt.event.ActionListener() {
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Text1NotaActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("2º Nota");
-
-        Text2Nota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Text2NotaActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setText("Media");
-
-        TextMedia.setEnabled(false);
-        TextMedia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextMediaActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Situação");
-
-        TextSituacao.setEnabled(false);
-        TextSituacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextSituacaoActionPerformed(evt);
-            }
-        });
-
-        BtnCalcular.setText("Calcular");
-        BtnCalcular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnCalcularActionPerformed(evt);
-            }
-        });
-
-        BtnLimpar.setText("Limpar");
-        BtnLimpar.setEnabled(false);
-        BtnLimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnLimparActionPerformed(evt);
-            }
-        });
-
-        BtnSair.setText("Sair");
-        BtnSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSairActionPerformed(evt);
+                btnCalcularActionPerformed(evt);
             }
         });
 
@@ -127,145 +94,124 @@ public class GUIAluno extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel1))
-                            .addGap(28, 28, 28)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(TextNome, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                                .addComponent(Text1Nota, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TextRA)))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(TextSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNota1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(jLabel1)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtRa)
+                                    .addComponent(txtNome))))
+                        .addGap(228, 228, 228))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnCalcular)
+                        .addGap(22, 22, 22)
+                        .addComponent(btnLimpar)
+                        .addGap(27, 27, 27)
+                        .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
-                                    .addComponent(jLabel6)
                                     .addComponent(jLabel5))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(24, 24, 24)
-                                        .addComponent(Text2Nota, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtNota2))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(24, 24, 24)
-                                        .addComponent(TextMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BtnCalcular)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnLimpar)))
-                .addGap(18, 18, 18)
-                .addComponent(BtnSair)
-                .addContainerGap(16, Short.MAX_VALUE))
+                                        .addGap(30, 30, 30)
+                                        .addComponent(lblMedia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 2, Short.MAX_VALUE)
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(228, 228, 228))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(TextRA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(TextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(Text1Nota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtNota1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(Text2Nota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNota2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(TextMedia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel6)
+                    .addComponent(lblSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnCalcular)
-                    .addComponent(BtnLimpar)
-                    .addComponent(BtnSair))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnLimpar)
+                    .addComponent(btnSair)
+                    .addComponent(btnCalcular))
+                .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TextRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextRAActionPerformed
-
-    }//GEN-LAST:event_TextRAActionPerformed
-
-    private void TextNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextNomeActionPerformed
-
-    private void Text1NotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text1NotaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Text1NotaActionPerformed
-
-    private void Text2NotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text2NotaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Text2NotaActionPerformed
-
-    private void TextMediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextMediaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextMediaActionPerformed
-
-    private void TextSituacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextSituacaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextSituacaoActionPerformed
-
-    private void BtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSairActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         dispose();
-    }//GEN-LAST:event_BtnSairActionPerformed
+    }//GEN-LAST:event_btnSairActionPerformed
 
-    private void BtnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCalcularActionPerformed
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         DecimalFormat Formato = new DecimalFormat("#0.00");
-        double Nota1, Nota2, Media;
-
-        if (!"".equals(Text1Nota.getText()) && (!"".equals(Text2Nota.getText()))) {
-
-            Nota1 = Double.parseDouble(Text1Nota.getText().replace(',','.'));
-            Nota2 = Double.parseDouble(Text2Nota.getText().replace(',','.'));
-            Media = (Nota1 + Nota2) / 2;
-            TextMedia.setText(Formato.format(Media));
-
-            if (Media >= 6) {
-                TextSituacao.setText("Aprovado");
-            } else {
-                TextSituacao.setText("Reprovado");
-            }
-
-            BtnCalcular.setEnabled(false);
-            BtnLimpar.setEnabled(true);
-            
-        } else {
-            JOptionPane.showMessageDialog(null, "Digite as notas");
+        double nota1,nota2,media;
+        nota1 = Double.parseDouble(txtNota1.getText().replace(',', '.')); 
+        nota2 = Double.parseDouble(txtNota2.getText().replace(',', '.'));
+        media = (nota1+nota2)/2;
+        //lblMedia.setText(String.valueOf(media));
+        lblMedia.setText(Formato.format(media));
+        
+        if(media>=6){
+            lblSituacao.setText("Aprovado");
+        }else{
+            lblSituacao.setText("Reprovado");
         }
-    }//GEN-LAST:event_BtnCalcularActionPerformed
+        
+        btnLimpar.setEnabled(true);
+        btnCalcular.setEnabled(false);
+        
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
-    private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed
-        Text1Nota.setText(null);
-        Text2Nota.setText(null);
-        TextMedia.setText(null);
-        TextSituacao.setText(null);
-        TextNome.setText(null);
-        TextRA.setText(null);
-
-        BtnLimpar.setEnabled(false);
-        BtnCalcular.setEnabled(true);
-
-        TextNome.requestFocus();
-    }//GEN-LAST:event_BtnLimparActionPerformed
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        txtRa.setText("");
+        txtNome.setText("");
+        txtNota1.setText("");
+        txtNota2.setText("");
+        lblMedia.setText("");
+        lblSituacao.setText("");
+        btnLimpar.setEnabled(false);
+        btnCalcular.setEnabled(true);
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,39 +230,39 @@ public class GUIAluno extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUIAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GuiAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUIAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GuiAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUIAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GuiAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUIAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GuiAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUIAluno().setVisible(true);
+                new GuiAluno().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnCalcular;
-    private javax.swing.JButton BtnLimpar;
-    private javax.swing.JButton BtnSair;
-    private javax.swing.JTextField Text1Nota;
-    private javax.swing.JTextField Text2Nota;
-    private javax.swing.JTextField TextMedia;
-    private javax.swing.JTextField TextNome;
-    private javax.swing.JTextField TextRA;
-    private javax.swing.JTextField TextSituacao;
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel lblMedia;
+    private javax.swing.JLabel lblSituacao;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNota1;
+    private javax.swing.JTextField txtNota2;
+    private javax.swing.JTextField txtRa;
     // End of variables declaration//GEN-END:variables
 }

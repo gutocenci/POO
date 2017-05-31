@@ -5,8 +5,8 @@ public class FuncionarioMensalista extends Funcionario {
     private double valSalMin;
     private double numSalMin;
 
-    public FuncionarioMensalista(int r, String n, String dta, double nsm) {
-        super(r, n, dta);
+    public FuncionarioMensalista(int r, String n, String dta, String cargo, double nsm) {
+        super(r, n, dta, cargo);
         numSalMin = nsm;
     }
 
